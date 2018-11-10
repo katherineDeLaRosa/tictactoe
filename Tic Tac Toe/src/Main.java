@@ -157,7 +157,7 @@ public class Main {
 					
 					if (z.CheckWin(t.board) == true)
 					{
-						m.DisplayWin();
+						m.Player1win();
 						if (sound == true) {
 							p.playSound(); 
 						}
@@ -225,7 +225,7 @@ public class Main {
 		           
 					if (z.CheckWin(t.board) == true)
 					{
-						m.DisplayWin();
+						m.Player2win();
 						if (sound ==true)
 						{
 							p.playSound(); 
