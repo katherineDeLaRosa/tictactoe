@@ -14,6 +14,7 @@ public class Main {
 		boolean kp = true;
 		int f;
 		int round = 0;
+		boolean sound = false;
 		
 		while(kg == true)
 		{
@@ -237,6 +238,19 @@ public class Main {
 			else if (uc == 3)
 			{
 				m.displaySettings();
+				x = s.nextInt();
+				if (x == 1)
+				{
+					sound = true;
+				}
+				if (x== 2)
+				{
+					sound = false;
+				}
+				else 
+				{
+					System.out.println("Invalid input!");
+				}
 			}
 			else 
 			{
