@@ -22,7 +22,8 @@ public class Main {
 			kp = true;
 			t.clearBoard();
 			round = 0;
-			int uc = s.nextInt();
+			int uc = 0;
+			uc = z.CheckUI(uc);
 			//the application
 			if (uc == 4 )
 					kg = false;
@@ -34,38 +35,41 @@ public class Main {
 					round = round + 1;
 					t.displayBoard();
 					//player move
-					System.out.println("Select x coordinate: ");
-					x = s.nextInt();
-					System.out.println("Select y coordinate: ");
-					y = s.nextInt();
-					while(t.displayPlayermove(x,y) == false)
-					  {
-					 		System.out.println("Select x coordinate: ");
-							x = s.nextInt();
+					x = y = -1;
+					do
+					{
+						
+							System.out.println("Select x coordinate: ");
+							x = z.CheckUI(x);
 							System.out.println("Select y coordinate: ");
-							y = s.nextInt();
-						}
+							y = z.CheckUI(y);
+						
+					} while(t.displayPlayermove(x,y) == false || x == -1 || y == -1);
 					
 					//checks for win
 					if (z.CheckWin(t.board) == true)
 					{
 						m.DisplayWin();
-						x = s.nextInt();
-						if (x == 2)
+						x = -1;
+						while( x != 1 || x != 2)
 						{
-							kg = false;
-							kp = false;
+							x = z.CheckUI(x);
+							if (x == 2)
+							{
+								kg = false;
+								kp = false;
+								break;
+							}
+							else if (x == 1)
+							{
+								kp = false;
+								break;
+							}
+							else if(x != 1 || x != 2)
+							{
+								System.out.println("Invalid input. 1 = Keep Playing, 2 = Exit");
+							}
 						}
-						else if (x == 1)
-						{
-							kp = false;
-						}
-						else if(x != 1 || x != 2)
-						{
-							System.out.println("Invalid input. 1 = Keep Playing, 2 = Exit");
-							x = s.nextInt();
-						}		
-					
 					}
 					
 					
@@ -73,7 +77,7 @@ public class Main {
 					//this is for draws
 					//not displaying for some reason
 					//fix this
-					if (round >= 9 && kp == true)
+					else if (round >= 9 && kp == true)
 					{
 						m.DisplayDraw();
 						f = s.nextInt();
@@ -134,17 +138,16 @@ public class Main {
 					round = round + 1;
 					t.displayBoard();
 					//player 1 move
-					System.out.println("Select x coordinate: ");
-					x = s.nextInt();
-					System.out.println("Select y coordinate: ");
-					y = s.nextInt();					
-					while(t.displayPlayermove(x,y) == false)
-					  {
-					 		System.out.println("Select x coordinate: ");
-							x = s.nextInt();
+					x = y = -1;
+					do
+					{
+						
+							System.out.println("Select x coordinate: ");
+							x = z.CheckUI(x);
 							System.out.println("Select y coordinate: ");
-							y = s.nextInt();
-						}
+							y = z.CheckUI(y);
+						
+					} while(t.displayPlayermove(x,y) == false || x == -1 || y == -1);
 					
 					if (z.CheckWin(t.board) == true)
 					{
@@ -169,7 +172,7 @@ public class Main {
 					//draw check
 					//not displaying 
 					//fix this
-					if (round >= 9 && kp == true)
+					else if (round >= 9 && kp == true)
 					{
 						m.DisplayDraw();
 						f = s.nextInt();
@@ -196,41 +199,39 @@ public class Main {
 					round = round + 1;
 					if (kp == true && round < 9)
 					{
-					t.displayBoard();
-					System.out.println("Select x coordinate: ");
-					x = s.nextInt();
-					System.out.println("Select y coordinate: ");
-					y = s.nextInt();
-					while(t.displayPlayer2move(x,y) == false)
-					  {
-					 		System.out.println("Select x coordinate: ");
-							x = s.nextInt();
-							System.out.println("Select y coordinate: ");
-							y = s.nextInt();
-						}
-					
-					
-		           
-					if (z.CheckWin(t.board) == true)
-					{
-						m.DisplayWin();
-						x = s.nextInt();
-						if (x == 2)
+						t.displayBoard();
+						x = y = -1;
+						do
 						{
-							kg = false;
-							kp = false;
-						}
-						else if (x == 1)
-						{
-							kp = false;
-						}
-						else if(x != 1 || x != 2)
-						{
-							System.out.println("Invalid input. 1 = Keep Playing, 2 = Exit");
-							x = s.nextInt();
-						}
+							
+								System.out.println("Select x coordinate: ");
+								x = z.CheckUI(x);
+								System.out.println("Select y coordinate: ");
+								y = z.CheckUI(y);
+							
+						} while(t.displayPlayer2move(x,y) == false || x == -1 || y == -1);
 						
-					}
+						
+			           
+						if (z.CheckWin(t.board) == true)
+						{
+							m.DisplayWin();
+							x = s.nextInt();
+							if (x == 2)
+							{
+								kg = false;
+								kp = false;
+							}
+							else if (x == 1)
+							{
+								kp = false;
+							}
+							else if(x != 1 || x != 2)
+							{
+								System.out.println("Invalid input. 1 = Keep Playing, 2 = Exit");
+								x = s.nextInt();
+							}
+						}
 					}
 				}
 			}

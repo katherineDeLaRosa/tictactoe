@@ -1,5 +1,9 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Checks extends TicTacToeGame {
+	Scanner s = new Scanner(System.in);
+	
 	public Checks()
 	{
 		//does nothing
@@ -17,7 +21,7 @@ public class Checks extends TicTacToeGame {
 		if (a[2][0] == a[1][1] && a[1][1] == a[0][2] && a[1][1] != ' ')
 			return true;
 		
-		//the verticle ones
+		//the vertical ones
 		for (int i = 0; i < 3; i++)
 		{
 			if (a[0][i] == a[1][i] && a[1][i] == a[2][i] &&  a[0][i] != ' ')
@@ -34,6 +38,19 @@ public class Checks extends TicTacToeGame {
 		}
 		//if no wins sighted
 		return false;
+	}
+	
+	public int CheckUI(int u)
+	{
+		try
+		{
+			u = s.nextInt();
+		}
+		catch(InputMismatchException e)
+		{
+			s.next();
+		}
+		return u;
 	}
 	
 	/*
