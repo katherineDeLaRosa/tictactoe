@@ -81,14 +81,13 @@ public class Main {
 					//this is for draws
 					//not displaying for some reason
 					//fix this
-					if (round >= 9 && kp == true)
+					else if (round >= 9 )
 					{
 						m.DisplayDraw();
 						f = s.nextInt();
 						if (f == 2)
 						{
 							kg = false;
-							kp = false;
 						}
 						else if (f == 1)
 						{
@@ -181,7 +180,7 @@ public class Main {
 					//draw check
 					//not displaying 
 					//fix this
-					if (round >= 9 && kp == true)
+					else if (round >= 9)
 					{
 						m.DisplayDraw();
 						f = s.nextInt();
