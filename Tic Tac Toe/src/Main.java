@@ -1,25 +1,28 @@
+import Sound.*;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 		//the setup
 		Menu m = new Menu();
+		SoundTest p = new SoundTest(); //Call for sound
 		TicTacToeGame t = new TicTacToeGame();
 		t.TicTacToe();
 		Checks z = new Checks();
 		Scanner s = new Scanner(System.in);
 		int x;
 		int y;
+		boolean sound = false;
 		boolean kg = true;
 		boolean kp = true;
 		int f;
 		int round = 0;
-		boolean sound = false;
 		
 		while(kg == true)
 		{
 			//the reset
 			m.displayMain();
+			p.playSound();  //Sound for Winner
 			kp = true;
 			t.clearBoard();
 			round = 0;
