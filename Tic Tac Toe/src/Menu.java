@@ -35,6 +35,20 @@ public class Menu {
 		System.out.println("1. Yes");
 		System.out.println("2. No");	
 	}
+	public void Player1win()
+	{
+		System.out.println("Player 1 Win!");
+		System.out.println("Would you like to play again?");
+		System.out.println("1. Yes");
+		System.out.println("2. No");	
+	}
+	public void Player2win()
+	{
+		System.out.println("Player 2 Win!");
+		System.out.println("Would you like to play again?");
+		System.out.println("1. Yes");
+		System.out.println("2. No");	
+	}
 	public void DisplayDraw()
 	{
 		System.out.println("Draw!");
