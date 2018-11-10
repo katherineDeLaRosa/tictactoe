@@ -238,6 +238,19 @@ public class Main {
 			else if (uc == 3)
 			{
 				m.displaySettings();
+				x = s.nextInt();
+				if (x == 1)
+				{
+					sound = true;
+				}
+				else if (x== 2)
+				{
+					sound = false;
+				}
+				else 
+				{
+					System.out.println("Invalid input!");
+				}
 			}
 			else 
 			{
