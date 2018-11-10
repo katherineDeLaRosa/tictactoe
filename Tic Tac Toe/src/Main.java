@@ -22,7 +22,8 @@ public class Main {
 		{
 			//the reset
 			m.displayMain();
-			p.playSound();  //Sound for Winner
+			 //Sound for Winner
+			p.playSound(); 
 			kp = true;
 			t.clearBoard();
 			round = 0;
@@ -54,6 +55,7 @@ public class Main {
 					if (z.CheckWin(t.board) == true)
 					{
 						m.DisplayWin();
+						p.playSound(); 
 						x = s.nextInt();
 						if (x == 2)
 						{
@@ -107,6 +109,7 @@ public class Main {
 						if (z.CheckWin(t.board) == true)
 						{
 							m.ComputerWin();
+							//if we want, dark victory
 							x = s.nextInt();
 							if (x == 2)
 							{
@@ -153,6 +156,7 @@ public class Main {
 					if (z.CheckWin(t.board) == true)
 					{
 						m.DisplayWin();
+						p.playSound(); 
 						x = s.nextInt();	
 						if (x == 2)
 						{
@@ -218,6 +222,7 @@ public class Main {
 					if (z.CheckWin(t.board) == true)
 					{
 						m.DisplayWin();
+						p.playSound(); 
 						x = s.nextInt();
 						if (x == 2)
 						{
