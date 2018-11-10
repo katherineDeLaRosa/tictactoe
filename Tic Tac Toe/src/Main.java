@@ -23,7 +23,6 @@ public class Main {
 			//the reset
 			m.displayMain();
 			 //Sound for Winner
-			p.playSound(); 
 			kp = true;
 			t.clearBoard();
 			round = 0;
@@ -55,7 +54,10 @@ public class Main {
 					if (z.CheckWin(t.board) == true)
 					{
 						m.DisplayWin();
-						p.playSound(); 
+						if (sound == true)
+						{
+							p.playSound(); 
+						}
 						x = s.nextInt();
 						if (x == 2)
 						{
@@ -156,7 +158,9 @@ public class Main {
 					if (z.CheckWin(t.board) == true)
 					{
 						m.DisplayWin();
-						p.playSound(); 
+						if (sound == true) {
+							p.playSound(); 
+						}
 						x = s.nextInt();	
 						if (x == 2)
 						{
@@ -222,7 +226,10 @@ public class Main {
 					if (z.CheckWin(t.board) == true)
 					{
 						m.DisplayWin();
-						p.playSound(); 
+						if (sound ==true)
+						{
+							p.playSound(); 
+						}
 						x = s.nextInt();
 						if (x == 2)
 						{
