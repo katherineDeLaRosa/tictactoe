@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import Sound.*;
 
 public class Main {
 	public static void main(String[] args) {
@@ -8,6 +9,8 @@ public class Main {
 		t.TicTacToe();
 		Checks z = new Checks();
 		Scanner s = new Scanner(System.in);
+		SoundTest p = new SoundTest();
+		boolean sound = false;
 		int x;
 		int y;
 		boolean kg = true;
@@ -50,6 +53,11 @@ public class Main {
 					if (z.CheckWin(t.board) == true)
 					{
 						m.DisplayWin();
+						
+						if (sound == true)
+						{
+							p.playSound(); 
+						}
 						x = -1;
 						while( x != 1 || x != 2)
 						{
@@ -152,6 +160,10 @@ public class Main {
 					if (z.CheckWin(t.board) == true)
 					{
 						m.DisplayWin();
+						if (sound == true)
+						{
+							p.playSound(); 
+						}
 						x = s.nextInt();	
 						if (x == 2)
 						{
@@ -216,6 +228,10 @@ public class Main {
 						if (z.CheckWin(t.board) == true)
 						{
 							m.DisplayWin();
+							if (sound == true)
+							{
+								p.playSound(); 
+							}
 							x = s.nextInt();
 							if (x == 2)
 							{

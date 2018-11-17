@@ -1,4 +1,3 @@
-//this is a thing i changed
 import java.util.*;
 public class TicTacToeGame {
 
